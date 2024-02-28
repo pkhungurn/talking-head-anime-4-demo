@@ -1,1 +1,3 @@
 #! /bin/bash
+export PYTHONPATH=$(pwd)/python/src
+venv/bin/python $@
