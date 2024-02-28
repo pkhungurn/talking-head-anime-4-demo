@@ -257,7 +257,14 @@ In order for the system to work well, the input image must obey the following co
 
 ![An example of an image that conforms to the above criteria](docs/images/input_spec.png "An example of an image that conforms to the above criteria")
 
-## Documentation for Some Tools
+## Documentation for the Tools
+
+* [`character_model_ifacial_model_puppeteer`](blob/main/docscharacter_model_ifacial_model_puppeteer.md)
+* [`character_model_manual_poser`](blob/main/docs/character_model_manual_poser.md)
+* [`character_model_mediapipe_puppeteer`](blob/main/docs/character_model_mediapipe_puppeteer.md)
+* [`distiller`](blob/main/docs/distiller.md)
+* [`distiller_ui`](blob/main/docs/distiller_ui.md)
+* [`full_manual_poser`](blob/main/docs/full_manual_poser.md)
 
 ## Disclaimer
 
