@@ -221,7 +221,7 @@ The programs are located in the `src/tha4/app` directory. You need to run them f
    * `character_model_mediapipe_puppeteer.py`
    * `distill.py`
    * `disller_ui.py`
-   * `full_manual_poser`
+   * `full_manual_poser.py`
 
 ### Instruction for Windows Users
 
@@ -241,7 +241,7 @@ The programs are located in the `src/tha4/app` directory. You need to run them f
    * `character_model_mediapipe_puppeteer.py`
    * `distill.py`
    * `disller_ui.py`
-   * `full_manual_poser`
+   * `full_manual_poser.py`
 
 ## Contraints on Input Images
 
