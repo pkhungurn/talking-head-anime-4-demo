@@ -2,7 +2,7 @@
 
 This program uses the full version of the Talking Head(?) Anime 4 system to animate character images.
 
-## Usage
+## Invoking the Program
 
 Make sure you have (1) created a Python environment and (2) downloaded model files as instruction in the [main README file](../README.md).
 
@@ -28,4 +28,4 @@ Make sure you have (1) created a Python environment and (2) downloaded model fil
 3. Run the program.
    ```
    bin\run.bat src\tha4\app\full_manual_poser.py
-   ```   
+   ```
