@@ -259,7 +259,7 @@ In order for the system to work well, the input image must obey the following co
 
 ## Documentation for the Tools
 
-* [`character_model_ifacial_model_puppeteer`](docs/character_model_ifacial_model_puppeteer.md)
+* [`character_model_ifacial_model_puppeteer`](docs/character_model_ifacialmocap_puppeteer.md)
 * [`character_model_manual_poser`](docs/character_model_manual_poser.md)
 * [`character_model_mediapipe_puppeteer`](docs/character_model_mediapipe_puppeteer.md)
 * [`distiller`](docs/distiller.md)
