@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+    <title>Distiller UI Documentation: character_image_file_name</title>
+</head>
+<body>
+<h1><code>character_image_file_name</code></h1>
+<p>This is the name of the file of an image of a humanoid character. The image must conform to the following specifications.</p>
+
+<p>
+<ul>
+    <li>It MUST in the PNG format.</li>
+    <li>It MUST have an alpha channel.</li>
+    <li>It MUST be 512 x 512.</li>
+    <li>It MUST contain only one humanoid character.</li>
+    <li>The character should be standing upright and facing forward.</li>
+    <li>The character's hands should be below and far from the head.</li>
+    <li>The head of the character should roughly be contained in the 128 x 128 box in the middle of the top half of the image.</li>
+    <li>The alpha channels of all pixels that do not belong to the character (i.e., background pixels) must be 0.</li>
+</ul>
+</p>
+
+<p>
+<img src="../images/input_spec.png" alt="">
+</p>
+
+<p>Once you have chosen the image, a crop of the character face will be shown on the right side of the window. In order for the distillation process works correctly, <b>make sure that all the movable parts of the face&mdash; eyes, eyebrows, mouth, jaw line &mdash; can all be seen in this crop.</b></p>
+
+<p>
+<table border="1" cellpadding="5">
+    <tr>
+        <td align="center"><img src="../images/face_crop_ok.png" alt=""><br><font size="18" color="green">&#9745;</font></td>
+        <td>This image is GOOD because we can see all of the eyes, eyebrows, mouth, and jaw line in the image.</td>
+    </tr>
+    <tr>
+        <td align="center"><img src="../images/face_crop_not_ok_00.png" alt=""><br><font size="18" color="red">&#9746;</font></td>
+        <td>This image is NOT GOOD because we cannot see the whole of the jaw line in the image</td>
+    </tr>
+    <tr>
+        <td align="center"><img src="../images/face_crop_not_ok_01.png" alt=""><br><font size="18" color="red">&#9746;</font></td>
+        <td>This image is NOT GOOD because we cannot see the whole of the right eye and eyebrow in the image.</td>
+    </tr>
+    <tr>
+        <td align="center"><img src="../images/face_crop_not_ok_02.png" alt=""><br><font size="18" color="red">&#9746;</font></td>
+        <td>This image is NOT GOOD because we cannot see the whole of the eyebrows in the image.</td>
+    </tr>
+</table>
+</p>
+
+<p>The <code>data/images</code> directory contains two example images that conform to all the above specifications: <code>data/images/lambda_00.png</code> and <code>data/images/lambda_01.png</code>. Please use them as references.</p>
+
+<hr>
+
+<a href="../index.html">Back to main documentation</a>
+</body>
+</html>

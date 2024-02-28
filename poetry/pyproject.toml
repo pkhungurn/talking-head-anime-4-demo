@@ -1,0 +1,34 @@
+[tool.poetry]
+name = "talking-head-anime-4-demo"
+version = "0.1.0"
+description = "Demo code for Talking Head(?) Anime 4"
+authors = ["Pramook Khungurn <pong@pixiv.co.jp>"]
+readme = "README.md"
+packages = [
+    {include = "tha4", from = "../src"},
+]
+
+[tool.poetry.dependencies]
+python = ">=3.10, <3.11"
+torch = {version = "1.13.1", source = "torch_cu117"}
+torchvision = {version = "0.14.1", source = "torch_cu117"}
+tensorboard = "^2.15.1"
+opencv-python = "^4.8.1.78"
+wxpython = "^4.2.1"
+numpy-quaternion = "^2022.4.2"
+pillow = "^9.4.0"
+matplotlib = "^3.6.3"
+einops = "^0.6.0"
+mediapipe = "^0.10.3"
+numpy = "^1.26.3"
+scipy = "^1.12.0"
+omegaconf = "^2.3.0"
+
+[[tool.poetry.source]]
+name = "torch_cu117"
+url = "https://download.pytorch.org/whl/cu117"
+priority = "explicit"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

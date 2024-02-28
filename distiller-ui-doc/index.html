@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <title>Distiller UI Documentation</title>
+</head>
+<body>
+<h1>How to use Distiller UI</h1>
+
+<p>This program is called <code>distiller_ui</code>. It allows you to create and modify configurations for the process of distilling the full, but slow THA4 system to a student model that can be run in real time on computers with moderately powerful GPUs.</p>
+
+<h2>Basic Usage</h2>
+
+<p>This program manipulates YAML files that are used as configurations for the distillation process. The menus
+<ul>
+    <li><b>File &rarr; New</b></li>
+    <li><b>File &rarr; Open</b></li>
+    <li><b>File &rarr; Save</b></li>
+</ul>
+do what they are supposed to do in typical application programs.
+</p>
+
+<p>You can use the UI in the middle panel to change various parameters of the configuration. If you do not understand what the meaning of a parameter, click the "Help" button for that parameter to learn more.</p>
+
+<p>Once you have modified the parameters to your liking, click the "RUN" button at the bottom of the middle panel to carry out the distillation. This will take several ten hours, so sit back and relax.</p>
+
+<p>The distillation process can be interrupted and resumed at any time. As a result, you do not have to worry that you may lose data if there's a blackout or if you need to free your GPU(s) to do something else. Resuming can be done through this program or through the <code>distill</code> script.</p>
+
+<h2>Explanation of Configuration Parameters</h2>
+
+<ul>
+    <li><a href="params/prefix.html"><code>prefix</code></a></li>
+    <li><a href="params/character_image_file_name.html"><code>character_image_file_name</code></a></li>
+    <li><a href="params/face_mask_image_file_name.html"><code>face_mask_image_file_name</code></a></li>
+    <li><a href="params/num_cpu_workers.html"><code>num_cpu_workers</code></a></li>
+    <li><a href="params/num_gpus.html"><code>num_gpus</code></a></li>
+    <li><a href="params/face_morpher_random_seed_0.html"><code>face_morpher_random_seed_0</code></a></li>
+    <li><a href="params/face_morpher_random_seed_1.html"><code>face_morpher_random_seed_1</code></a></li>
+    <li><a href="params/face_morpher_batch_size.html"><code>face_morpher_batch_size</code></a></li>
+    <li><a href="params/body_morpher_random_seed_0.html"><code>body_morpher_random_seed_0</code></a></li>
+    <li><a href="params/body_morpher_random_seed_1.html"><code>body_morpher_random_seed_1</code></a></li>
+    <li><a href="params/body_morpher_batch_size.html"><code>body_morpher_batch_size</code></a></li>
+    <li><a href="params/num_training_examples_per_sample_output.html"><code>num_training_examples_per_sample_output</code></a></li>
+</ul>
+
+</body>
+</html>

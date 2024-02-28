@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <title>Distiller UI Documentation: face_mask_image_file_name</title>
+</head>
+<body>
+<h1><code>face_mask_image_file_name</code></h1>
+
+<p>This is the name of the file containing binary masks of movable facial organs of the character. It is probably the best to see an example.</p>
+
+<p>
+    <img src="../../data/images/lambda_00_face_mask.png" alt="">
+</p>
+
+<p>A "face mask image" conforms to the following specification.</p>
+
+<p>
+    <ul>
+        <li>It must be in the PNG format.</li>
+        <li>It must be 512 x 512.</li>
+        <li>It must be an RGB image (i.e., no alpha channel).</li>
+        <li>All pixels must be either block (0,0,0) or white (255,255,255).</li>
+        <li>The white pixels should cover movable parts of the face.</li>
+    </ul>
+</p>
+
+<p>We recommend creating three rectangles.</p>
+
+<p>
+    <ul>
+        <li>One covers the right eye and eyebrow.</li>
+        <li>One covers the left eye and eyebrow.</li>
+        <li>One covers the mouth and the jaw line.</li>
+    </ul>
+</p>
+
+<p>The rectangles for the eyes and the eyebrows should extend above the eyes to some extent because the eyebrows can move upward.</p>
+
+<p>Once you have specified the face mask image with the "Change..." button, a crop of the face area will show up on the left side of the window. If the character image has also been specified, an image of the face mask laid over the character's face will also show up. Use this image to check whether the masks are covering everything.</p>
+
+<p>
+    <img src="../images/left_panel.png" alt="">
+</p>
+
+<hr>
+<a href="../index.html">Back to main documentation</a>
+</body>
+</html>
