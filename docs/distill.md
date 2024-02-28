@@ -29,3 +29,6 @@ Make sure you have (1) created a Python environment and (2) downloaded model fil
    bin\run.bat src\tha4\app\full_manual_poser.py <config-file>
    ```   
    where `<config-file>` is a configuration file for creating a student model. More on this later.
+
+## Configuration File
+

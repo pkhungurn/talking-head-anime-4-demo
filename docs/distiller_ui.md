@@ -1,4 +1,4 @@
-# `distill_ui`
+# `distiller_ui`
 
 ## Invoking the Program
 

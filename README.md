@@ -12,7 +12,7 @@ This demo code has two parts.
 
 * **Distillation.** This part allows the user to train small models (which we will refer to as **student models**) to mimic that behavior of the full system with regards to a specific character image. It also allows the user to run these models under various interfaces. The demo programs are:
 
-  * The `distiller` trains a student model given a configuration file, a $512 \times 512$ RGBA character image, and a mask of facial organs.
+  * The `distill` trains a student model given a configuration file, a $512 \times 512$ RGBA character image, and a mask of facial organs.
   * The `distiller_ui` provides a user-friendly interface to the distiller, allowing you to create training configurations and providing useful documentation.
   * The `character_model_manual_poser` allows the user to control trained student models with a graphical user interface.
   * The `character_model_ifacialmocap_puppeteer` allows the user to control trained student models with their facial movement, which is captured by the [iFacialMocap](https://www.ifacialmocap.com/) software. To run this software, you must have an iOS device and, of course, iFacialMocap.
@@ -34,11 +34,11 @@ A student model is a small (< 2MB) and fast machine learning model that knows ho
 
 ### So, for this release, you can only control two fixed characters in real time?
 
-No. You can create your own student models by using the `distiller`.
+No. You can create your own student models by using the `distill` program.
 
-### How do I use the `distiller`?
+### How do I use `distill`?
 
-Unless you want to automate the process of training student models, please use the `distiller_ui` instead. It will guide you through the required data preparation and will invoke the `distiller` on your behalf when you are ready.
+Unless you want to automate the process of training student models, please use the `distiller_ui` instead. It will guide you through the required data preparation and will invoke the `distill` on your behalf when you are ready.
 
 ### How long does it take to create a student model?
 
@@ -54,7 +54,7 @@ In other words, it makes the user's life difficult but the engineer/researcher h
 
 ### Can I use a student model from a web browser?
 
-No. A student model created by the `distiller` is a [PyTorch](https://pytorch.org/) model, which cannot run directly in the browser. It needs to be converted to the appropriate format ([TensorFlow.js](https://www.tensorflow.org/js)) first, and the [web](https://pkhungurn.github.io/talking-head-anime-4/supplementary/webcam-demo/index.html) [demos](https://pkhungurn.github.io/talking-head-anime-4/supplementary/manual-poser-demo/index.html) use the converted models. However, The conversion code is not included in this repository. I will not release it unless I change my mind.
+No. A student model created by `distill` is a [PyTorch](https://pytorch.org/) model, which cannot run directly in the browser. It needs to be converted to the appropriate format ([TensorFlow.js](https://www.tensorflow.org/js)) first, and the [web](https://pkhungurn.github.io/talking-head-anime-4/supplementary/webcam-demo/index.html) [demos](https://pkhungurn.github.io/talking-head-anime-4/supplementary/manual-poser-demo/index.html) use the converted models. However, The conversion code is not included in this repository. I will not release it unless I change my mind.
 
 ## Hardware Requirements
 
@@ -220,7 +220,7 @@ The programs are located in the `src/tha4/app` directory. You need to run them f
    * `character_model_manual_poser.py`
    * `character_model_mediapipe_puppeteer.py`
    * `distill.py`
-   * `disller_ui.py`
+   * `disllerer_ui.py`
    * `full_manual_poser.py`
 
 ### Instruction for Windows Users
@@ -240,7 +240,7 @@ The programs are located in the `src/tha4/app` directory. You need to run them f
    * `character_model_manual_poser.py`
    * `character_model_mediapipe_puppeteer.py`
    * `distill.py`
-   * `disller_ui.py`
+   * `disllerer_ui.py`
    * `full_manual_poser.py`
 
 ## Contraints on Input Images
@@ -262,7 +262,7 @@ In order for the system to work well, the input image must obey the following co
 * [`character_model_ifacial_model_puppeteer`](docs/character_model_ifacialmocap_puppeteer.md)
 * [`character_model_manual_poser`](docs/character_model_manual_poser.md)
 * [`character_model_mediapipe_puppeteer`](docs/character_model_mediapipe_puppeteer.md)
-* [`distiller`](docs/distiller.md)
+* [`distill`](docs/distill.md)
 * [`distiller_ui`](docs/distiller_ui.md)
 * [`full_manual_poser`](docs/full_manual_poser.md)
 
