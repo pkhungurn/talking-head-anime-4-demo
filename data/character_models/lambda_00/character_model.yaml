@@ -1,0 +1,3 @@
+character_image_file_name: character.png
+face_morpher_file_name: face_morpher.pt
+body_morpher_file_name: body_morpher.pt
