@@ -26,4 +26,4 @@ Make sure you have (1) created a Python environment and (2) downloaded model fil
 3. Run the program.
    ```
    bin\run.bat src\tha4\app\character_model_ifacialmocap_puppeteer.py
-   ```   
+   ```
