@@ -14,9 +14,9 @@ This demo code has two parts.
 
   * The `distiller` trains a student model given a configuration file, a $512 \times 512$ RGBA character image, and a mask of facial organs.
   * The `distiller_ui` provides a user-friendly interface to the distiller, allowing you to create training configurations and providing useful documentation.
-  * The `student_manual_poser` allows the user to control trained student models with a graphical user interface.
-  * The `student_ifacialmocap_puppeteer` allows the user to control trained student models with their facial movement, which is captured by the [iFacialMocap](https://www.ifacialmocap.com/) software. To run this software, you must have an iOS device and, of course, iFacialMocap.
-  * The `student_mediapipe_puppeteer` allows the user to control trained student models with their facial movement, which is captured by the [Mediapipe FaceLandmarker](https://developers.google.com/mediapipe/solutions/vision/face_landmarker) model. To run this software, you need a web camera.  
+  * The `character_model_manual_poser` allows the user to control trained student models with a graphical user interface.
+  * The `character_model_ifacialmocap_puppeteer` allows the user to control trained student models with their facial movement, which is captured by the [iFacialMocap](https://www.ifacialmocap.com/) software. To run this software, you must have an iOS device and, of course, iFacialMocap.
+  * The `character_model_mediapipe_puppeteer` allows the user to control trained student models with their facial movement, which is captured by the [Mediapipe FaceLandmarker](https://developers.google.com/mediapipe/solutions/vision/face_landmarker) model. To run this software, you need a web camera.  
 
 ## Preemptive FAQs
 
@@ -24,7 +24,7 @@ This demo code has two parts.
 
 There is no such program in this release. If you want one, try the `ifacialmocap_puppeteer` of [Version 3](https://github.com/pkhungurn/talking-head-anime-3-demo).
 
-### What is the `student_ifacialmocap_puppeteer` and `student_mediapipe_puppeteer` then?
+### What is the `character_model_ifacialmocap_puppeteer` and `character_model_mediapipe_puppeteer` then?
 
 These programs allow you to control "student models" with your movement in real time with moderate hardware requirement.
 
@@ -60,9 +60,9 @@ No. A student model created by the `distiller` is a [PyTorch](https://pytorch.or
 
 All programs require a recent and powerful Nvidia GPU to run. I developed the programs on a machine with an Nvidia RTX A6000. However, anything after the GeForce RTX 2080 should be fine.
 
-The `student_ifacialmocap_puppeteer` program requires an iOS device that is capable of computing [blend shape parameters](https://developer.apple.com/documentation/arkit/arfaceanchor/2928251-blendshapes) from a video feed. This means that the device must be able to run iOS 11.0 or higher and must have a TrueDepth front-facing camera. (See [this page](https://developer.apple.com/documentation/arkit/content_anchors/tracking_and_visualizing_faces) for more info.) In other words, if you have the iPhone X or something better, you should be all set. Personally, I have used an iPhone 12 mini.
+The `character_model_ifacialmocap_puppeteer` program requires an iOS device that is capable of computing [blend shape parameters](https://developer.apple.com/documentation/arkit/arfaceanchor/2928251-blendshapes) from a video feed. This means that the device must be able to run iOS 11.0 or higher and must have a TrueDepth front-facing camera. (See [this page](https://developer.apple.com/documentation/arkit/content_anchors/tracking_and_visualizing_faces) for more info.) In other words, if you have the iPhone X or something better, you should be all set. Personally, I have used an iPhone 12 mini.
 
-The `student_mediapipe_puppeteer` program requires a web camera.
+The `character_model_mediapipe_puppeteer` program requires a web camera.
 
 ## Software Requirements
 
@@ -167,10 +167,105 @@ Please clone the repository to an arbitrary directory in your machine.
 
 ### THA4 Models
 
-### MediaPipe Models
+Please download [this ZIP file](https://www.dropbox.com/scl/fi/7wec0sur7449iqgtlpi3n/tha4-models.zip?rlkey=0f9d1djmbvjjjn09469s1adx8&dl=0) hosted on Dropbox, and unzip it to the `data/tha4` directory the under the repository's directory. In the end, the directory tree should look like the following diagram:
+
+```
++ talking-head-anime-4-demo
+   + data
+      - character_models
+      - distill_examples
+      + tha4
+         - body_morpher.pt
+         - eyebrow_decomposer.pt
+         - eyebrow_morphing_combiner.pt
+         - face_morpher.pt
+         - upscaler.pt
+     - images
+     - third_party
+```
 
 ### Pose Dataset
 
+If you want to create your own student models, you also need to download a dataset of poses that are needed for the training process. Download [this `pose_dataset.pt` file](https://www.dropbox.com/scl/fi/du10e6buzr5bslbe025qu/pose_dataset.pt?rlkey=y052g4n3xb14nu2elctzouc5x&dl=0) and save it to the `data` folder. The directory tree should then look like the following diagram:
 
-## Using the programs
+```
++ talking-head-anime-4-demo
+   + data
+      - character_models
+      - distill_examples
+      - tha4
+      - images
+      - third_party
+      - pose_dataset.pt
+```
 
+## Running the Programs
+
+The programs are located in the `src/tha4/app` directory. You need to run them from a shell with the provided scripts.
+
+### Instruction for Linux/OSX Users
+
+1. Open a shell.
+2. `cd` to the repository's directory.
+   ```
+   cd SOMEWHERE/talking-head-anime-4-demo
+   ```
+3. Run a program.
+   ```
+   bin/run src/tha4/app/<program-file-name>
+   ```
+   where `<program-file-name>` can be replaced with:
+   
+   * `character_model_ifacialmocap_puppeteer.py`
+   * `character_model_manual_poser.py`
+   * `character_model_mediapipe_puppeteer.py`
+   * `distill.py`
+   * `disller_ui.py`
+   * `full_manual_poser`
+
+### Instruction for Windows Users
+
+1. Open a shell.
+2. `cd` to the repository's directory.
+   ```
+   cd SOMEWHERE\talking-head-anime-4-demo
+   ```
+3. Run a program.
+   ```
+   bin\run.bat src\tha4\app\<program-file-name>
+   ```
+   where `<program-file-name>` can be replaced with:
+   
+   * `character_model_ifacialmocap_puppeteer.py`
+   * `character_model_manual_poser.py`
+   * `character_model_mediapipe_puppeteer.py`
+   * `distill.py`
+   * `disller_ui.py`
+   * `full_manual_poser`
+
+## Contraints on Input Images
+
+In order for the system to work well, the input image must obey the following constraints:
+
+* It should be of resolution 512 x 512. (If the demo programs receives an input image of any other size, they will resize the image to this resolution and also output at this resolution.)
+* It must have an alpha channel.
+* It must contain only one humanoid character.
+* The character should be standing upright and facing forward.
+* The character's hands should be below and far from the head.
+* The head of the character should roughly be contained in the 128 x 128 box in the middle of the top half of the image.
+* The alpha channels of all pixels that do not belong to the character (i.e., background pixels) must be 0.
+
+![An example of an image that conforms to the above criteria](docs/images/input_spec.png "An example of an image that conforms to the above criteria")
+
+## Documentation for Some Tools
+
+## Disclaimer
+
+The author is an employee of [pixiv Inc.](https://www.pixiv.co.jp/) This project is a part of his work as a researcher.
+
+However, this project is NOT a pixiv product. The company will NOT provide any support for this project. The author will try to support the project, but there are no Service Level Agreements (SLAs) that he will maintain.
+
+The code is released under the [MIT license](https://github.com/pkhungurn/talking-head-anime-2-demo/blob/master/LICENSE).
+The THA4 models and the images under the `data/images` directory are released under the [Creative Commons Attribution-NonCommercial 4.0 International](https://creativecommons.org/licenses/by-nc/4.0/deed.en).
+
+This repository redistributes a version of the [Face landmark detection model](https://developers.google.com/mediapipe/solutions/vision/face_landmarker) from the [MediaPipe](https://developers.google.com/mediapipe) project. The model has been released under the [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0.html).
