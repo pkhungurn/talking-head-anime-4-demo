@@ -13,7 +13,7 @@ This demo code has two parts.
 * **Distillation.** This part allows the user to train small models (which we will refer to as **student models**) to mimic that behavior of the full system with regards to a specific character image. It also allows the user to run these models under various interfaces. The demo programs are:
 
   * `distill` trains a student model given a configuration file, a $512 \times 512$ RGBA character image, and a mask of facial organs.
-  * `distiller_ui` provides a user-friendly interface to the distiller, allowing you to create training configurations and providing useful documentation.
+  * `distiller_ui` provides a user-friendly interface to `distill`, allowing you to create training configurations and providing useful documentation.
   * `character_model_manual_poser` allows the user to control trained student models with a graphical user interface.
   * `character_model_ifacialmocap_puppeteer` allows the user to control trained student models with their facial movement, which is captured by the [iFacialMocap](https://www.ifacialmocap.com/) software. To run this software, you must have an iOS device and, of course, iFacialMocap.
   *  `character_model_mediapipe_puppeteer` allows the user to control trained student models with their facial movement, which is captured by the [Mediapipe FaceLandmarker](https://developers.google.com/mediapipe/solutions/vision/face_landmarker) model. To run this software, you need a web camera.  
