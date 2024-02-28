@@ -163,5 +163,13 @@ Please clone the repository to an arbitrary directory in your machine.
    poetry install
    ```
 
+## Download the Models
+
+### THA4 Models
+
+### MediaPipe Models
+
+
+
 ## Using the programs
 
