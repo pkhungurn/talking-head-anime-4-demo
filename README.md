@@ -24,25 +24,22 @@ This demo code has two parts.
 
 There is no such program in this release. If you want one, try the `ifacialmocap_puppeteer` of [Version 3](https://github.com/pkhungurn/talking-head-anime-3-demo).
 
-### What are `character_model_ifacialmocap_puppeteer` and `character_model_mediapipe_puppeteer` then?
+### OK. I'm confused. Isn't your work about easy VTubing? Are you saying this release cannot do it?
 
-These programs allow you to control "student models" with your movement in real time with moderate hardware requirement.
+NO. This release does it in a more complicated way. In order to control an image, you need to create a "student model." It is a small (< 2MB) and fast machine learning model that knows how to animate that particular image. Then, the student model can be controlled with facial movement. You can find two student models in the `data/character_models` directory. The [two](https://pkhungurn.github.io/talking-head-anime-4/supplementary/webcam-demo/index.html) [demos](https://pkhungurn.github.io/talking-head-anime-4/supplementary/manual-poser-demo/index.html) on the project website feature 13 students models.
 
-### What is a student model?
+### So, for this release, you can control only these few characters in real time?
 
-A student model is a small (< 2MB) and fast machine learning model that knows how to animate a specific character image. You can find two student models in the `data/character_models` directory. The [two](https://pkhungurn.github.io/talking-head-anime-4/supplementary/webcam-demo/index.html) [demos](https://pkhungurn.github.io/talking-head-anime-4/supplementary/manual-poser-demo/index.html) on the project website feature 13 students models.
+No. You can create your own student models.
 
-### So, for this release, you can only control two fixed characters in real time?
+### How do I create this student model then?
 
-No. You can create your own student models by using the `distill` program.
-
-### How do I use `distill`?
-
-Unless you want to automate the process of training student models, please use the `distiller_ui` instead. It will guide you through the required data preparation and will invoke the `distill` on your behalf when you are ready.
-
-### How long does it take to create a student model?
-
-Last time I tried, it was about 30 hours on a computer with an Nvidia RTX A6000 GPU.
+1. You prepare your characater image according to the "Constraint on Input Images" section below.
+2. You prepare a black-and-white mask image that covers the eyes and the mouth of the character, like [this image](data/images/lambda_00_face_mask.png). You can see how I made it with [GIMP](https://www.gimp.org/) by inspecting this [GIMP file](data/images/lambda_00_face_mask.xcf).
+3. You use `distiller_ui` to create a configuration file that specifies how the student model should be trained.
+4. You use `distiller_ui` or `distill` to start the training process.
+5. You wait several ten hours for the student model to finish training. Last time I tried, it was about 30 hours on a computer with an Nvidia RTX A6000 GPU.
+6. After that, you can control the student model with `character_model_ifacialmocap_puppeteer` and `character_model_mediapipe_puppeteer`.
 
 ### Why is this release so hard to use?
 
@@ -51,6 +48,7 @@ Last time I tried, it was about 30 hours on a computer with an Nvidia RTX A6000 
 In this release, I explore a new way of doing things. I added a new preprocessing stage (i.e., training the student models) that has to be done one time per character image. It allows the image to be animated much faster at a higher image quality level.
 
 In other words, it makes the user's life difficult but the engineer/researcher happy. Patient users who are willing to go through the steps, though, would be rewarded with faster animation.
+
 
 ### Can I use a student model from a web browser?
 
