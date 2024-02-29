@@ -16,7 +16,7 @@ This demo code has two parts.
   * `distiller_ui` provides a user-friendly interface to `distill`, allowing you to create training configurations and providing useful documentation.
   * `character_model_manual_poser` allows the user to control trained student models with a graphical user interface.
   * `character_model_ifacialmocap_puppeteer` allows the user to control trained student models with their facial movement, which is captured by the [iFacialMocap](https://www.ifacialmocap.com/) software. To run this software, you must have an iOS device and, of course, iFacialMocap.
-  *  `character_model_mediapipe_puppeteer` allows the user to control trained student models with their facial movement, which is captured a web camera and processed by the [Mediapipe FaceLandmarker](https://developers.google.com/mediapipe/solutions/vision/face_landmarker) model. To run this software, you need a web camera.  
+  *  `character_model_mediapipe_puppeteer` allows the user to control trained student models with their facial movement, which is captured a web camera and processed by the [Mediapipe FaceLandmarker](https://developers.google.com/mediapipe/solutions/vision/face_landmarker) model. To run this software, you need a web camera.
 
 ## Preemptive FAQs
 

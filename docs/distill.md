@@ -34,3 +34,7 @@ Make sure you have (1) created a Python environment and (2) downloaded model fil
 
 ## Configuration File
 
+A configuration file is a [YAML](https://yaml.org/) file that specify how to create a student model. This repository comes with two valid configuration files that you can peruse:
+
+* [data/distill_examples/lambda_00/config.yaml](data/distill_examples/lambda_00/config.yaml)
+* [data/distill_examples/lambda_01/config.yaml](data/distill_examples/lambda_01/config.yaml)
