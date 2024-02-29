@@ -1,5 +1,7 @@
 # `distiller_ui`
 
+This program provides a user-friendly interface to the [`distill`](distill.md) program, allowing you to create training configurations and providing useful documentation.
+
 ## Invoking the Program
 
 Make sure you have (1) created a Python environment and (2) downloaded model files as instruction in the [main README file](../README.md).
@@ -27,3 +29,7 @@ Make sure you have (1) created a Python environment and (2) downloaded model fil
    ```
    bin\run.bat src\tha4\app\distill_ui.py
    ```   
+
+## Usage
+
+Please consult the documentation inside the program itself. It is available on the rightmost panel.

@@ -1,5 +1,7 @@
 # `distill`
 
+This program trains a student model given a configuration file, a $512 \times 512$ RGBA character image, and a mask of facial organs.
+
 ## Invoking the Program
 
 Make sure you have (1) created a Python environment and (2) downloaded model files as instruction in the [main README file](../README.md).

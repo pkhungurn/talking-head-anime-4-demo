@@ -1,5 +1,7 @@
 # `character_model_manual_poser`
 
+This program allows the user to control trained student models with a graphical user interface, mostly sliders.
+
 ## Invoking the Program
 
 Make sure you have (1) created a Python environment and (2) downloaded model files as instruction in the [main README file](../README.md).

@@ -1,5 +1,7 @@
 # `character_model_mediapipe_puppeteer`
 
+allows the user to control trained student models with their facial movement, which is captured by a web camera and processed by the [Mediapipe FaceLandmarker](https://developers.google.com/mediapipe/solutions/vision/face_landmarker) model.
+
 ## Invoking the Program
 
 Make sure you have (1) created a Python environment and (2) downloaded model files as instruction in the [main README file](../README.md).

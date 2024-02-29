@@ -1,5 +1,7 @@
 # `character_model_ifacialmocap_puppeteer`
 
+This program allows the user to control trained student models with their facial movement, which is captured by the [iFacialMocap](https://www.ifacialmocap.com/) software.
+
 ## Invoking the Program
 
 Make sure you have (1) created a Python environment and (2) downloaded model files as instruction in the [main README file](../README.md).
