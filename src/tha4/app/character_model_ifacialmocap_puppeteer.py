@@ -46,7 +46,7 @@ class MainFrame(wx.Frame):
     IMAGE_SIZE = 512
 
     def __init__(self, pose_converter: IFacialMocapPoseConverter, device: torch.device):
-        super().__init__(None, wx.ID_ANY, "iFacialMocap Puppeteer (Marigold)")
+        super().__init__(None, wx.ID_ANY, "iFacialMocap Puppeteer (Fuji)")
         self.poser = None
         self.pose_converter = pose_converter
         self.device = device
