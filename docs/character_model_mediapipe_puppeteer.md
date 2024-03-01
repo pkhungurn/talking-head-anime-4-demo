@@ -4,7 +4,15 @@ allows the user to control trained student models with their facial movement, wh
 
 ## Web Camera
 
-Please make sure that, before you invoke the program, your computer has a web camera plugged in. The program will use a web camera, but it does not allow you to specify which. In case your machine has more than one web camera, you can turn off all camera except the one that you want to use. You can also inspect the [source code](../src/tha4/app/character_model_mediapipe_puppeteer.py)
+Please make sure that, before you invoke the program, your computer has a web camera plugged in. The program will use a web camera, but it does not allow you to specify which. In case your machine has more than one web camera, you can turn off all camera except the one that you want to use. 
+
+You can also inspect the [source code](../src/tha4/app/character_model_mediapipe_puppeteer.py) and change the 
+
+```
+    video_capture = cv2.VideoCapture(0)
+```
+
+line to choose a particular camera that you want to use.
 
 ## Invoking the Program
 
